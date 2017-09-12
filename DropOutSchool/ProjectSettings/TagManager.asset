@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - EndPoint
+  - Road
   layers:
   - Default
   - TransparentFX

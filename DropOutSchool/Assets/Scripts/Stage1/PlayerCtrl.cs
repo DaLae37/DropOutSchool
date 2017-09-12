@@ -7,11 +7,13 @@ public class PlayerCtrl : MonoBehaviour {
     private Vector2 touchPosition;
     private float swipeResistance = 200.0f;
     private bool isStarted;
+    public bool isChange;
     public float Speed = 5.0f;
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
         isStarted = false;
+        isChange = false;
 	}
 	
 	// Update is called once per frame
@@ -46,9 +48,8 @@ public class PlayerCtrl : MonoBehaviour {
             }
             else
             {
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonUp(0))
                 {
-                    Debug.Log("Start Game");
                     anim.SetBool("isStarted", true);
                     isStarted = true;
                 }
@@ -88,11 +89,26 @@ public class PlayerCtrl : MonoBehaviour {
     }
     public void TurnTime()
     {
-
+        if (isChange)
+        {
+            isChange = false;
+            transform.position = new Vector3(transform.position.x + 200, transform.position.y,-0.1f);
+            Stage1Mgr.instance.morning.SetActive(true);
+            Stage1Mgr.instance.night.SetActive(false);
+        }
+        else if (!isChange)
+        {
+            isChange = true;
+            transform.position = new Vector3(transform.position.x - 200, transform.position.y, -0.1f);
+            Stage1Mgr.instance.morning.SetActive(false);
+            Stage1Mgr.instance.night.SetActive(true);
+        }
     }
     private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Wall")
             PlayerOff();
+        else if (coll.gameObject.tag == "EndPoint")
+            PlayerClear();        
     }
 }
