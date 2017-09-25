@@ -61,19 +61,12 @@ public class Stage1Mgr : MonoBehaviour {
         {
             for (int j = 0; j < mapSize; j++)
             {
-                GameObject g = Instantiate(wallList[Random.Range(0, wallList.Length)]);
-                g.transform.position = new Vector2(-(mapSize/2) * 18 + (i * 18), 3 + (mapSize - j) * 12);
-                g.transform.SetParent(walls1.transform);
-            }
-        }
-        //2벽 생성
-        for (int i = 0; i < mapSize; i++)
-        {
-            for (int j = 0; j < mapSize; j++)
-            {
-                GameObject g = Instantiate(wallList[Random.Range(0, wallList.Length)]);
-                g.transform.position = new Vector2(-200 -(mapSize / 2) * 18 + (i * 18), 3 + (mapSize - j) * 12);
-                g.transform.SetParent(walls2.transform);
+                GameObject g1 = Instantiate(wallList[0]);
+                g1.transform.position = new Vector2(-(mapSize / 2) * 18 + (i * 18), 3 + (mapSize - j) * 12);
+                g1.transform.SetParent(walls1.transform);
+                GameObject g2 = Instantiate(wallList[1]);
+                g2.transform.position = new Vector2(-200 - (mapSize / 2) * 18 + (i * 18), 3 + (mapSize - j) * 12);
+                g2.transform.SetParent(walls2.transform);
             }
         }
     }
