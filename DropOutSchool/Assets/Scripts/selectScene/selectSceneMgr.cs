@@ -7,6 +7,10 @@ public class selectSceneMgr : MonoBehaviour {
     {
         SceneManager.LoadScene("mainScene");
     }
+    public void profileScene()
+    {
+        SceneManager.LoadScene("profileScene");
+    }
     public void Stage1()
     {
         SceneManager.LoadScene("Stage1");

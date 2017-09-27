@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropOutSchool", "Assembly-CSharp.csproj", "{B2D9F4A6-B386-CA91-02C0-584E6CB14867}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropOutSchool", "DropOutSchool.csproj", "{2CD85908-BA30-B677-54A1-8B5DCACA308B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B2D9F4A6-B386-CA91-02C0-584E6CB14867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2D9F4A6-B386-CA91-02C0-584E6CB14867}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2D9F4A6-B386-CA91-02C0-584E6CB14867}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2D9F4A6-B386-CA91-02C0-584E6CB14867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CD85908-BA30-B677-54A1-8B5DCACA308B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CD85908-BA30-B677-54A1-8B5DCACA308B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CD85908-BA30-B677-54A1-8B5DCACA308B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CD85908-BA30-B677-54A1-8B5DCACA308B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

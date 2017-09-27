@@ -8,14 +8,20 @@ public class tutorialSceneMgr : MonoBehaviour {
     public GameObject genderPoP;
     public GameObject gender;
     public GameObject namePoP;
-    public GameObject name;
+    public GameObject namePanel;
     public GameObject FemaleImage;
     public GameObject MaleImage;
     public Text nameText;
+    public Text schoolText;
     bool isFemale;
 	// Use this for initialization
 	void Start () {
         isFemale = false;
+        if (PlayerPrefs.HasKey("isFemale"))
+        {
+            gender.SetActive(false);
+            namePanel.SetActive(true);
+        }
 	}
 	
 	// Update is called once per frame
@@ -47,7 +53,7 @@ public class tutorialSceneMgr : MonoBehaviour {
         }
         HideGenderPopUp();
         gender.SetActive(false);
-        name.SetActive(true);
+        namePanel.SetActive(true);
     }
     public void HideGenderPopUp()
     {
@@ -68,6 +74,8 @@ public class tutorialSceneMgr : MonoBehaviour {
     public void NameYes()
     {
         PlayerPrefs.SetString("name",nameText.text);
+        PlayerPrefs.SetString("school", schoolText.text);
+        PlayerPrefs.SetInt("profile", 1);
         SceneManager.LoadScene("mainScene");
     }
 }
