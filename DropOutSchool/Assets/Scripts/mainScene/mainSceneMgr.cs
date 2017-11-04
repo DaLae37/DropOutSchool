@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class mainSceneMgr : MonoBehaviour {
+    public GameObject tutorialPanel;
     private void Start()
     {
-        if(PlayerPrefs.GetInt("profile") != 1)
+        if(!PlayerPrefs.HasKey("profile"))
         {
-            SceneManager.LoadScene("tutorialScene");
+            tutorialPanel.SetActive(true);
         }
     }
     public void selectScene()
@@ -17,5 +18,13 @@ public class mainSceneMgr : MonoBehaviour {
     public void exitGame()
     {
         Application.Quit();
+    }
+    public void profileScene()
+    {
+        SceneManager.LoadScene("tutorialScene");
+    }
+    public void settingScene()
+    {
+        SceneManager.LoadScene("settingScene");
     }
 }

@@ -8,10 +8,28 @@ public class PlayerCtrl : MonoBehaviour {
     private float swipeResistance = 200.0f;
     private bool isStarted;
     public bool isChange;
+    public int isFemale;
     public float Speed = 5.0f;
+    public GameObject changeEffect;
+    public Sprite male;
+    public Sprite female;
 	// Use this for initialization
-	void Start () {
+    
+	void Awake () {
+        isFemale = PlayerPrefs.GetInt("isFemale");
         anim = GetComponent<Animator>();
+        
+        if(isFemale == 1)
+        {
+            GetComponent<SpriteRenderer>().sprite = female;
+            anim.SetBool("isMale", false);
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = male;
+            anim.SetBool("isMale", true);
+        }
+    
         isStarted = false;
         isChange = false;
 	}
@@ -75,6 +93,7 @@ public class PlayerCtrl : MonoBehaviour {
     }
     public void Turn(int amount)
     {
+        Instantiate(changeEffect, transform.position, transform.rotation);
         if (!CameraCtrl.instance.cameraRot)
         {
             transform.Rotate(new Vector3(0, 0, amount));
@@ -103,6 +122,7 @@ public class PlayerCtrl : MonoBehaviour {
             Stage1Mgr.instance.morning.SetActive(false);
             Stage1Mgr.instance.night.SetActive(true);
         }
+        Instantiate(changeEffect, transform.position, transform.rotation);
     }
     private void OnCollisionEnter2D(Collision2D coll)
     {
