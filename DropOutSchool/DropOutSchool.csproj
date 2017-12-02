@@ -84,29 +84,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="DropOutSchool.Plugins.csproj">
-      <Project>{BE20091D-1F1B-EEA1-2739-FC8EA85131AF}</Project>
-      <Name>DropOutSchool.Plugins</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\Scripts\mainScene\mainSceneMgr.cs" />
     <Compile Include="Assets\Scripts\profileSceneMgr\profileSceneMgr.cs" />
     <Compile Include="Assets\Scripts\selectScene\scrollRectSnap.cs" />
     <Compile Include="Assets\Scripts\selectScene\selectSceneMgr.cs" />
     <Compile Include="Assets\Scripts\settingScene\settingScene.cs" />
+    <Compile Include="Assets\Scripts\soundMgr.cs" />
     <Compile Include="Assets\Scripts\Stage1\CameraCtrl.cs" />
     <Compile Include="Assets\Scripts\Stage1\PlayerCtrl.cs" />
     <Compile Include="Assets\Scripts\Stage1\Stage1Mgr.cs" />
     <Compile Include="Assets\Scripts\startScene\startSceneMgr.cs" />
     <Compile Include="Assets\Scripts\tutorialScene\tutorialSceneMgr.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-    <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
-    <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
-    <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
-    <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -6,7 +6,7 @@ public class startSceneMgr : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        soundMgr.instance.StartSound();
 	}
 	
 	// Update is called once per frame

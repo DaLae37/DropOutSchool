@@ -1,11 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropOutSchool.Plugins", "DropOutSchool.Plugins.csproj", "{BE20091D-1F1B-EEA1-2739-FC8EA85131AF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropOutSchool", "DropOutSchool.csproj", "{2CD85908-BA30-B677-54A1-8B5DCACA308B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropOutSchool.Editor.Plugins", "DropOutSchool.Editor.Plugins.csproj", "{40DAB226-5035-08CD-B31E-0AE910D1B9D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,18 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BE20091D-1F1B-EEA1-2739-FC8EA85131AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE20091D-1F1B-EEA1-2739-FC8EA85131AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE20091D-1F1B-EEA1-2739-FC8EA85131AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE20091D-1F1B-EEA1-2739-FC8EA85131AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2CD85908-BA30-B677-54A1-8B5DCACA308B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2CD85908-BA30-B677-54A1-8B5DCACA308B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CD85908-BA30-B677-54A1-8B5DCACA308B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CD85908-BA30-B677-54A1-8B5DCACA308B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{40DAB226-5035-08CD-B31E-0AE910D1B9D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40DAB226-5035-08CD-B31E-0AE910D1B9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40DAB226-5035-08CD-B31E-0AE910D1B9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40DAB226-5035-08CD-B31E-0AE910D1B9D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

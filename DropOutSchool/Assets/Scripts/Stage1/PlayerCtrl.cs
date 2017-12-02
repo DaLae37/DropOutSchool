@@ -6,20 +6,27 @@ public class PlayerCtrl : MonoBehaviour {
     private Animator anim;
     private Vector2 touchPosition;
     private float swipeResistance = 200.0f;
-    private bool isStarted;
+    public bool isStarted;
     public bool isChange;
     public int isFemale;
     public float Speed = 5.0f;
     public GameObject changeEffect;
     public Sprite male;
     public Sprite female;
-	// Use this for initialization
-    
-	void Awake () {
+    public static PlayerCtrl instance;
+
+    public float invincivleTimer;
+    public bool isInvincible;
+    // Use this for initialization
+
+    void Awake() {
+        invincivleTimer = 0.0f;
+        isInvincible = false;
+        instance = this;
         isFemale = PlayerPrefs.GetInt("isFemale");
         anim = GetComponent<Animator>();
-        
-        if(isFemale == 1)
+        anim.enabled = false;
+        if (isFemale == 1)
         {
             GetComponent<SpriteRenderer>().sprite = female;
             anim.SetBool("isMale", false);
@@ -29,15 +36,28 @@ public class PlayerCtrl : MonoBehaviour {
             GetComponent<SpriteRenderer>().sprite = male;
             anim.SetBool("isMale", true);
         }
-    
+
         isStarted = false;
         isChange = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update() {
         if (!Stage1Mgr.instance.isGameOver)
         {
+            if (isInvincible)
+            {
+                invincivleTimer += Time.deltaTime;
+                if ((int)(invincivleTimer * 10) % 2 == 0)
+                    GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+                else
+                    GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+                if (invincivleTimer >= 2.0f)
+                {
+                    invincivleTimer = 0.0f;
+                    isInvincible = false;
+                }
+            }
             if (isStarted)
             {
                 if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
@@ -70,6 +90,7 @@ public class PlayerCtrl : MonoBehaviour {
                 {
                     anim.SetBool("isStarted", true);
                     isStarted = true;
+                    anim.enabled = true;
                 }
             }
         }
@@ -80,7 +101,7 @@ public class PlayerCtrl : MonoBehaviour {
         Stage1Mgr.instance.unHideClearPoP();
         anim.SetBool("isGameOver", true);
     }
-    void PlayerOff()
+    public void PlayerOff()
     {
         Stage1Mgr.instance.isGameOver = true;
         Stage1Mgr.instance.unHideGameOverPoP();
@@ -88,7 +109,7 @@ public class PlayerCtrl : MonoBehaviour {
     }
     void FixedUpdate()
     {
-        if(isStarted && !Stage1Mgr.instance.isGameOver)
+        if (isStarted && !Stage1Mgr.instance.isGameOver)
             transform.Translate(new Vector3(0, Speed, 0) * Time.smoothDeltaTime);
     }
     public void Turn(int amount)
@@ -108,27 +129,46 @@ public class PlayerCtrl : MonoBehaviour {
     }
     public void TurnTime()
     {
-        if (isChange)
+        if (!isInvincible)
         {
-            isChange = false;
-            transform.position = new Vector3(transform.position.x + 200, transform.position.y,-0.1f);
-            Stage1Mgr.instance.morning.SetActive(true);
-            Stage1Mgr.instance.night.SetActive(false);
+            soundMgr.instance.Skill();
+            if (isChange)
+            {
+                isChange = false;
+                transform.position = new Vector3(transform.position.x + 200, transform.position.y, -0.1f);
+                Stage1Mgr.instance.morning.SetActive(true);
+                Stage1Mgr.instance.night.SetActive(false);
+            }
+            else if (!isChange)
+            {
+                isChange = true;
+                transform.position = new Vector3(transform.position.x - 200, transform.position.y, -0.1f);
+                Stage1Mgr.instance.morning.SetActive(false);
+                Stage1Mgr.instance.night.SetActive(true);
+            }
+            Instantiate(changeEffect, transform.position, transform.rotation);
+            isInvincible = true;
         }
-        else if (!isChange)
-        {
-            isChange = true;
-            transform.position = new Vector3(transform.position.x - 200, transform.position.y, -0.1f);
-            Stage1Mgr.instance.morning.SetActive(false);
-            Stage1Mgr.instance.night.SetActive(true);
-        }
-        Instantiate(changeEffect, transform.position, transform.rotation);
     }
     private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Wall")
+        {
+            soundMgr.instance.Crashed();
             PlayerOff();
+        }
         else if (coll.gameObject.tag == "EndPoint")
-            PlayerClear();        
+            PlayerClear();
+    }
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Block")
+        {
+            if (!isInvincible)
+            {
+                PlayerOff();
+                soundMgr.instance.Crashed();
+            }
+        }
     }
 }

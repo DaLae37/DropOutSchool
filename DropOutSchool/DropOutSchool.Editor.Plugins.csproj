@@ -127,21 +127,25 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-UnityScript">
+      <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="DropOutSchool.csproj">
-      <Project>{2CD85908-BA30-B677-54A1-8B5DCACA308B}</Project>
-      <Name>DropOutSchool</Name>
-    </ProjectReference>
     <ProjectReference Include="DropOutSchool.Plugins.csproj">
       <Project>{BE20091D-1F1B-EEA1-2739-FC8EA85131AF}</Project>
       <Name>DropOutSchool.Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="DropOutSchool.csproj">
+      <Project>{2CD85908-BA30-B677-54A1-8B5DCACA308B}</Project>
+      <Name>DropOutSchool</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\School Package\Standard Assets\Skyboxes\_skybox info.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />

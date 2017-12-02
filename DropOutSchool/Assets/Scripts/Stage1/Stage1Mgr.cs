@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class Stage1Mgr : MonoBehaviour {
+    //학교 이름
+    public Text txt1;
+    public Text txt2;
+
     //게임 제어 변수
     public int mapSize;
     public bool isGameOver;
@@ -27,9 +32,44 @@ public class Stage1Mgr : MonoBehaviour {
     List<int> blockYpos = new List<int>();
 
     public GameObject[] blockList = new GameObject[4];
+
+    //시간 관련 변수
+    float timer;
+    public GameObject Hour;
+    public GameObject Minute;
+
     // Use this for initialization
+    bool isIn(int pos, bool isX)
+    {
+        if (isX)
+        {
+            for(int i=pos-3; i<pos+3; i++)
+            {
+                if (blockXpos.Contains(i))
+                    return true;
+            }
+        }
+        else
+        {
+            for (int i = pos - 3; i < pos + 3; i++)
+            {
+                if (blockYpos.Contains(i))
+                    return true;
+            }
+        }
+        return false;
+    }
     void Start() {
+        soundMgr.instance.GameSound();
         instance = this;
+
+        string schoolName = PlayerPrefs.GetString("school");
+        for (int i = 0; i < schoolName.Length; i++)
+        {
+            txt1.text += schoolName[i] + "\n";
+        }
+        txt2.text = txt1.text;
+
         mapSize = 5;
         isGameOver = false;
         MapGenerator();
@@ -81,11 +121,11 @@ public class Stage1Mgr : MonoBehaviour {
         int minX = -(mapSize * WALL_H_SIZE / 2);
         int minY = 9 + (WALL_V_SIZE * mapSize);
         //장애물 생성1
-        for (int i = 0; i < mapSize + 1; i++)
+        for (int i = 0; i < mapSize + 4; i++)
         {
             int posX = minX + i * WALL_H_SIZE;
             int posY = Random.Range(9, minY + 1);
-            GameObject g = Instantiate(blockList[Random.Range(0, 4)]);
+            GameObject g = Instantiate(blockList[Random.Range(0, 3)]);
             blockXpos.Add(posX);
             blockYpos.Add(posY);
             g.transform.position = new Vector3(posX, posY, -0.2f);
@@ -96,19 +136,19 @@ public class Stage1Mgr : MonoBehaviour {
             do
             {
                 NposY = Random.Range(9, minY + 1);
-            } while (!blockYpos.Contains(NposY));
-            GameObject gz = Instantiate(blockList[Random.Range(0, 4)]);
+            } while (!isIn(NposY,false));
+            GameObject gz = Instantiate(blockList[Random.Range(0, 3)]);
             blockXpos.Add(NposX);
             blockYpos.Add(NposY);
             gz.transform.position = new Vector3(NposX, NposY, -0.2f);
             gz.transform.GetChild(1).gameObject.SetActive(true);
         }
         //장애물 생성2
-        for (int i = 0; i < mapSize + 1; i++)
+        for (int i = 0; i < mapSize + 4; i++)
         {
             int posX = Random.Range(minX, minX * -1 + 1);
             int posY = minY - i * WALL_V_SIZE;
-            GameObject g = Instantiate(blockList[Random.Range(0, 4)]);
+            GameObject g = Instantiate(blockList[Random.Range(0, 3)]);
             blockXpos.Add(posX);
             blockYpos.Add(posY);
             g.transform.position = new Vector3(posX, posY, -0.2f);
@@ -118,9 +158,9 @@ public class Stage1Mgr : MonoBehaviour {
             int NposY = minY - i * WALL_V_SIZE;
             do
             {
-                NposX = Random.Range(minX, minX * -1 + 1);
-            } while (!blockYpos.Contains(NposX));
-            GameObject gz = Instantiate(blockList[Random.Range(0, 4)]);
+                NposX = Random.Range(minX, minX * -1 + 1) - 200;
+            } while (!isIn(NposX, true));
+            GameObject gz = Instantiate(blockList[Random.Range(0, 3)]);
             blockXpos.Add(NposX);
             blockYpos.Add(NposY);
             gz.transform.position = new Vector3(NposX, NposY, -0.2f);
@@ -129,7 +169,17 @@ public class Stage1Mgr : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-		
+        if (PlayerCtrl.instance.isStarted)
+        {
+            timer += Time.deltaTime;
+            Hour.transform.Rotate(new Vector3(0, 0, -0.5f * Time.deltaTime));
+            Minute.transform.Rotate(new Vector3(0, 0, -6 * Time.deltaTime));
+            if (timer >= 60.0f)
+            {
+                isGameOver = true;
+                PlayerCtrl.instance.PlayerOff();
+            }
+        }
 	}
     public void unHideClearPoP()
     {
@@ -141,6 +191,7 @@ public class Stage1Mgr : MonoBehaviour {
     }
     public void selectScene()
     {
+        soundMgr.instance.StartSound();
         SceneManager.LoadScene("selectScene");
     }
 }
