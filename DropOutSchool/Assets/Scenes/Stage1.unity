@@ -68042,7 +68042,13 @@ MonoBehaviour:
   isChange: 0
   isFemale: 0
   Speed: 5
-  changeEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  changeEffect:
+  - {fileID: 180852, guid: 9ef916b309aba9446a08be5910cbc272, type: 2}
+  - {fileID: 111404, guid: ccfacd3b91beef8459b0d829b7aac729, type: 2}
+  - {fileID: 145564, guid: 3e3ed234878908b46af9d087271c63dd, type: 2}
+  - {fileID: 183252, guid: 65b6e58c4e061704385b3d987fcd8b69, type: 2}
+  - {fileID: 158066, guid: 96f2bc190f1b7ab46a26872f90662541, type: 2}
+  - {fileID: 187458, guid: 5c54293bd29e820498ddc49a16856b48, type: 2}
   male: {fileID: 21300000, guid: 2a054cbe5f6d7ac4e92d0b507a85b10f, type: 3}
   female: {fileID: 21300000, guid: eb0f57d2ced06694d85261261c10adc6, type: 3}
   invincivleTimer: 0

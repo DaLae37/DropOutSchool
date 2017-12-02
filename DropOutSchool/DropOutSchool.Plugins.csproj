@@ -84,17 +84,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
-    <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
-    <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
-    <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
-    <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
-    <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
-    <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
-    <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
-    <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
-    <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
-    <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
     <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\AfterburnerPhysicsForce.cs" />
     <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
     <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
@@ -105,34 +94,16 @@
     <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
     <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
     <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\ActivateTrigger.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\AlphaButtonClickMask.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\AutoMoveAndRotate.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\CameraRefocus.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\CurveControlledBob.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\DragRigidbody.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\DynamicShadowSettings.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\EventSystemChecker.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\FollowTarget.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\ForcedReset.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\FOVKick.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\FPSCounter.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\LerpControlledBob.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\ObjectResetter.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\ParticleSystemDestroyer.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\PlatformSpecificContent.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\SimpleMouseRotator.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\SmoothFollow.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\TimedObjectActivator.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\TimedObjectDestructor.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\WaypointCircuit.cs" />
-    <Compile Include="Assets\Standard Assets\Utility\WaypointProgressTracker.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\School Package\Standard Assets\Skyboxes\_skybox info.txt" />
-    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\SKJ Particle Tutorial\Plugins\Effect\Shader\ParticleAddEffect.shader" />
+    <None Include="Assets\SKJ Particle Tutorial\Plugins\Effect\Shader\ParticleAddSoftEffect.shader" />
+    <None Include="Assets\SKJ Particle Tutorial\Plugins\Effect\Shader\ParticleBlendEffect.shader" />
+    <None Include="Assets\SKJ Particle Tutorial\Plugins\Effect\Shader\ParticlePremultiplyBlend.shader" />
+    <None Include="Assets\SKJ Particle Tutorial\Plugins\Effect\Shader\Toon Additive.shader" />
+    <None Include="Assets\SKJ Particle Tutorial\Plugins\Effect\Shader\Toon Blended Premmultiply.shader" />
+    <None Include="Assets\SKJ Particle Tutorial\Plugins\Effect\Shader\effect_distortion_mask.shader" />
+    <None Include="Assets\SKJ Particle Tutorial\READ ME.txt" />
     <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />

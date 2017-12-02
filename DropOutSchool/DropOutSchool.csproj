@@ -84,6 +84,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\CameraTarget.cs" />
+    <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\EffectController.cs" />
+    <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\EffectDemo.cs" />
+    <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\EffectShaderPropertyStr.cs" />
+    <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\RenderEffect.cs" />
+    <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Script\TransformExtension.cs" />
     <Compile Include="Assets\Scripts\mainScene\mainSceneMgr.cs" />
     <Compile Include="Assets\Scripts\profileSceneMgr\profileSceneMgr.cs" />
     <Compile Include="Assets\Scripts\selectScene\scrollRectSnap.cs" />
@@ -95,6 +101,16 @@
     <Compile Include="Assets\Scripts\Stage1\Stage1Mgr.cs" />
     <Compile Include="Assets\Scripts\startScene\startSceneMgr.cs" />
     <Compile Include="Assets\Scripts\tutorialScene\tutorialSceneMgr.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleAddEffect.shader" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleAddSoftEffect.shader" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleBlendEffect.shader" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticlePremultiplyBlend.shader" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\Toon Additive.shader" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\Toon Blended Premmultiply.shader" />
+    <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\effect_distortion_mask.shader" />
+    <None Include="Assets\Particlecollection_Free samples\READ ME.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

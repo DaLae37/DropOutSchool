@@ -10,7 +10,7 @@ public class PlayerCtrl : MonoBehaviour {
     public bool isChange;
     public int isFemale;
     public float Speed = 5.0f;
-    public GameObject changeEffect;
+    public GameObject []changeEffect = new GameObject[6];
     public Sprite male;
     public Sprite female;
     public static PlayerCtrl instance;
@@ -114,7 +114,7 @@ public class PlayerCtrl : MonoBehaviour {
     }
     public void Turn(int amount)
     {
-        Instantiate(changeEffect, transform.position, transform.rotation);
+        Instantiate(changeEffect[Random.Range(0,6)], transform.position, transform.rotation);
         if (!CameraCtrl.instance.cameraRot)
         {
             transform.Rotate(new Vector3(0, 0, amount));
@@ -146,7 +146,7 @@ public class PlayerCtrl : MonoBehaviour {
                 Stage1Mgr.instance.morning.SetActive(false);
                 Stage1Mgr.instance.night.SetActive(true);
             }
-            Instantiate(changeEffect, transform.position, transform.rotation);
+            Instantiate(changeEffect[Random.Range(0, 6)], transform.position, transform.rotation);
             isInvincible = true;
         }
     }

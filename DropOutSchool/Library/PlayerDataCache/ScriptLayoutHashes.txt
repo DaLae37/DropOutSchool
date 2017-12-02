@@ -138,5 +138,9 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 8991d6579ff394cdeb7433d9c723c95f Assembly-CSharp.dll:.settingScene
 319e3c8756482aebd68d41a51d723fc5 Assembly-CSharp.dll:.mainSceneMgr
-40625db259d66c8b040e99fc7223fa31 Assembly-CSharp.dll:.PlayerCtrl
+7fd1601241d36de0e1d09456356822ff Assembly-CSharp.dll:.PlayerCtrl
 c1306b6f093fee8a37122eadd9cf8383 Assembly-CSharp.dll:.profileSceneMgr
+e7ec17895ab32b61ba574a2677295077 Assembly-CSharp.dll:.EffectController
+569e16817b3d0a3daadbe6c3d97d7996 Assembly-CSharp.dll:.RenderEffect
+543ce3c182d961761184fd39ea898f29 Assembly-CSharp.dll:.EffectDemo
+fdfaee1b34d01bc0c3ad3999cf0a5646 Assembly-CSharp.dll:.CameraTarget
