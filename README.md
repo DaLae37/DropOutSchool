@@ -20,13 +20,13 @@
 
 * Team
     * Team Leader
-        * Kang you bin
+        * Park you bin
     * Programmer
         * Lee Han su
     * Graphic Designer
         * Suk Su min
         * Song Hyun Sae
-        * Park Hee Su
+        * Kim Hee Su
 
 # 개발 엔진
 
@@ -34,4 +34,4 @@
 
 # 기타
 
-[시연 영상 - 유튜브](https://youtu.be/dFy0BpPeekg)
+[시연 영상 - 유튜브](https://youtu.be/jh3d_i4Eew4)
